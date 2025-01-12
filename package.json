@@ -1,0 +1,73 @@
+{
+  "name": "tobynguyen.dev",
+  "description": "My personal website and blog",
+  "version": "1.0.0",
+  "author": "Toby Nguyen <hongtan.dev@gmail.com>",
+  "keywords": [
+    "toby",
+    "nguyen",
+    "dev",
+    "blog",
+    "tobynguyen",
+    "personal site"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap-config.js",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write \"{components,pages,lib}/**/*.{js,jsx,ts,tsx}\"",
+    "generate": "prisma generate"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.4.1",
+    "@plaiceholder/next": "^2.4.0",
+    "@prisma/client": "^3.3.0",
+    "@tanstack/react-query": "^4.3.9",
+    "classix": "^2.1.40",
+    "flowbite-react": "^0.10.2",
+    "gray-matter": "^4.0.3",
+    "next": "^13.5.1",
+    "next-themes": "0.2.1",
+    "plaiceholder": "^2.0.1",
+    "prismjs": "^1.27.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-headings": "^3.0.15",
+    "react-icons": "^5.4.0",
+    "react-intersection-observer": "^8.32.2",
+    "react-markdown": "^5.0.3",
+    "sharp": "^0.32.6",
+    "zod": "^3.22.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
+    "@types/node": "^16.11.6",
+    "@types/prismjs": "^1.16.6",
+    "@types/react": "^18.0.23",
+    "@types/react-dom": "^18.0.7",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^7.29.0",
+    "eslint-config-next": "^12.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "next-secure-headers": "^2.2.0",
+    "next-sitemap": "^1.9.12",
+    "postcss": "^8.4.31",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.7",
+    "prisma": "^3.3.0",
+    "tailwindcss": "^3.1.2",
+    "typescript": "^4.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tobynguyen/tobynguyen.dev"
+  },
+  "bugs": {
+    "url": "https://github.com/tobynguyen/tobynguyen.dev/issues"
+  }
+}
