@@ -9,7 +9,12 @@ import { ICClose } from "./icons/Close";
 import { ICArrowRight } from "./icons/ArrowRight";
 
 const buttons = [{ href: "/about", text: "About" }];
-
+const buttonsMobile = [
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },  
+  { href: "/", text: "Blog" },
+  { href: "/about", text: "Contact" }
+];
 type HeaderButtonProps = {
   href: string;
   text: string;
@@ -122,8 +127,8 @@ export default function Header() {
                 />
               </button>
             </div>
-            <nav className="flex flex-col gap-4 mt-16">
-              {buttons.map(({ href, text }) => (
+            <nav className="flex flex-col gap-4 mt-12">
+              {buttonsMobile.map(({ href, text }) => (
                 <Link
                   key={href}
                   href={href}

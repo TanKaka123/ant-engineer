@@ -22,7 +22,7 @@ function FooterLink({ children, href }: FooterLinkProps) {
 
 export default function Footer() {
   return (
-    <footer className="space-y-6 pb-8 pt-4 px-6  border-solid border-gray-300 border-t-[1px]">
+    <footer className="hidden md:block space-y-6 pb-8 pt-4 px-6  border-solid border-gray-300 border-t-[1px]">
       <nav className="flex justify-center">
         <FooterLink href="/">Home</FooterLink>
         <Divider className="mx-4 h-auto" />
