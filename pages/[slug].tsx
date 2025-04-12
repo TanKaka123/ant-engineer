@@ -112,7 +112,7 @@ export default function SlugPage({
                 <H className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl lg:mb-8">
                   {title}
                 </H>
-                <p className="text-lg font-bold text-blue-600">{excerpt}</p>
+                <p className="text-xl font-normal italic text-gray-500">{excerpt}</p>
               </header>
 
               <div ref={topRef} />
