@@ -15,7 +15,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "allowJs": false,
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "pdfjs-dist": ["node_modules/pdfjs-dist/build/pdf"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

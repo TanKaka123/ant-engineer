@@ -1,25 +1,28 @@
 import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 import Prism from "prismjs";
-import "prismjs/components/prism-javascript";
-import "prismjs/components/prism-jsx";
-import "prismjs/components/prism-typescript";
-import "prismjs/components/prism-tsx";
+import "prism-themes/themes/prism-dracula.css"; 
+import "prismjs/components/prism-jsx";          // JSX Syntax
+import "prismjs/components/prism-typescript";   // TypeScript Syntax
+import "prismjs/components/prism-tsx";   
 
-function CodeBlock({ language, value }) {
+const CodeBlock = ({ node, inline, className, children, ...props }) => {
   useEffect(() => {
     Prism.highlightAll();
-  }, []);
+  }, [children]);
 
-  return (
-    <pre className={`language-${language}`}>
-      <code>{value}</code>
+  const match = /language-(\w+)/.exec(className || "");
+  return !inline && match ? (
+    <pre className={className}>
+      <code className={className}>{children}</code>
     </pre>
+  ) : (
+    <code className={className} {...props}>
+      {children}
+    </code>
   );
-}
-
-const renderers = {
-  code: CodeBlock,
 };
 
 type Props = {
@@ -28,10 +31,14 @@ type Props = {
 
 export default function MarkdownRenderer({ children }: Props) {
   return (
-    <div className="prose dark:prose-dark dark:prose-invert sm:prose-lg max-w-none">
-      {/*
-      // @ts-ignore */}
-      <ReactMarkdown renderers={renderers}>{children}</ReactMarkdown>
+    <div className="prose dark:prose-invert sm:prose-lg">
+      <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
+        remarkPlugins={[remarkGfm]}
+        components={{ code: CodeBlock }}
+      >
+        {children}
+      </ReactMarkdown>
     </div>
   );
 }

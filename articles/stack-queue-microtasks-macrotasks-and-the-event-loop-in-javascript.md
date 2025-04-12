@@ -1,15 +1,15 @@
 ---
-title: "Understanding Stack, Queue, Microtasks, Macrotasks, and the Event Loop in JavaScript"
-date: "2025-12-01"
+title: "Stack, Queue, Microtasks, Macrotasks & the Event Loop 👷🏽‍♂️"
+date: "2024-12-01"
 readingTime: 10
-coverImage: "/eventloop.webp"
+coverImage: "/rock_lee.png"
 excerpt: "An in-depth exploration of JavaScript's stack, queue, microtasks, macrotasks, and the event loop, explaining how they interact to handle asynchronous execution."
 tags: [ "javascript"]
 ---
 Javascript is often referred to as a single-threadred, which mean that it handles tasks asynchronously while running in a single thread. To achieve this, it relies on a robust system of **stack**, **queue**, **micro tasks**, **macro task** and **the event loop**. In this blog, we'll break down these concepts and explain how they work together to power javascript's execution model.
 
 ## 1. Call Stack: Where Execution Happens
-The **call stack** (or **Stack**) is a fundamental part of javascript's runtime. Whenever you call a function, it gets added to the stack and when the function complete, it is popped off the stack. It operates on the principles of `LIFO (Last In, First Out)`. 
+The **call stack** (or **Stack**) is a fundamental part of javascript's runtime. Whenever you call a function, it gets added to the stack and when the function complete, it is popped off the stack. It operates on the principles of <span style="color:blue">LIFO (Last In, First Out)</span>.
 
 > Key Characteristics:
 > - Handles synchronous code.
@@ -43,11 +43,11 @@ Example from tolobayo:
 
 ## 2. Task Queue: Managing Asynchronous Code
 
-The **task queue** (or **callback queue**) is where javascript stores asynchronous operations like `setTimeout` or events waiting to be executed. when the call stack is empty, the **event loop** (as coordinator) checks the task queue and moves tasks to the stack for execution.
+The **task queue** (or **callback queue**) is where javascript stores asynchronous operations like <span style="color:blue">setTimeout</span> or events waiting to be executed. when the call stack is empty, the **event loop** (as coordinator) checks the task queue and moves tasks to the stack for execution.
 
 > Key Characteristics:
 > - Follows **FIFO** (First In, First Out).
-> - Used for macrotasks like `setTimeout`, `setInterval`, and DOM events.
+> - Used for macrotasks like <span style="color:blue">setTimeout</span>, <span style="color:blue">setInterval</span>, and DOM events.
 
 ```ts
 console.log("Start");
@@ -78,7 +78,7 @@ console.log("End");
 
 ## 3. Microtasks: The VIPs of Asynchronous Execution
 
-Microtasks are high-priority tasks that are executed before macrotasks. Promises and `MutationObserver` callbacks are examples of microtasks. They are queued in the microtask queue, which is separate from the task queue.
+Microtasks are high-priority tasks that are executed before macrotasks. Promises and <span style="color:blue">MutationObserver</span> callbacks are examples of microtasks. They are queued in the microtask queue, which is separate from the task queue.
 
 > Key Characteristics:
 > - Processed right after the current stack is empty but before any macrotasks.
@@ -101,10 +101,10 @@ console.log("End");
 ```
 Execution Flow:
 1. "Start" is logged.
-2. `setTimeout` schedules the callback in the task queue.
-3. The promise's `.then()` schedules a microtask.
+2. <span style="color:blue">setTimeout</span> schedules the callback in the task queue.
+3. The promise's <span style="color:blue">.then()</span> schedules a microtask.
 4. "End" is logged.
-5. The microtask (`Promise resolved`) runs before the macrotask (`Timer callback`).
+5. The microtask (<span style="color:blue">Promise resolved</span>) runs before the macrotask (<span style="color:blue">Timer callback</span>).
 
 **Output:**
 ```python
@@ -115,7 +115,7 @@ Timer callback
 ```
 
 ## 4. Macrotasks: The Backbone of Asynchronous Execution
-Macrotasks include tasks like `setTimeout`, `setInterval`, I/O tasks, and rendering. They are lower in priority compared to microtasks, meaning the event loop processes all pending microtasks before moving on to the next macrotask.
+Macrotasks include tasks like <span style="color:blue">setTimeout</span>, <span style="color:blue">setInterval</span>, I/O tasks, and rendering. They are lower in priority compared to microtasks, meaning the event loop processes all pending microtasks before moving on to the next macrotask.
 
 ## 5. The Event Loop: The Conductor of the Orchestra
 The **event loop** is a mechanism that coordinates the execution of tasks, microtasks, and rendering. Its primary role is to ensure that the JavaScript runtime doesn't block and keeps processing tasks efficiently.

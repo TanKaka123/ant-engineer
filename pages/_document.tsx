@@ -17,9 +17,9 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en" dir="ltr" className="bg-white text-black">
         <Head>
-          <meta name="application-name" content="Toby Nguyen" />
+          <meta name="application-name" content="Ant Engineer" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="apple-mobile-web-app-title" content="Toby Nguyen" />
+          <meta name="apple-mobile-web-app-title" content="Ant Engineer" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#fe5186" />
           <link

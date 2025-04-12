@@ -1,10 +1,10 @@
 import React from "react";
 import Head from "next/head";
 
-const siteTitle = "Toby Nguyen";
+const siteTitle = "Ant Engineer";
 const siteDescription =
   "I solve problems using software and write bite-sized articles for developers.";
-const author = "Toby Nguyen";
+const author = "Ant Engineer";
 const siteUrl = "https://tobynguyen.dev";
 const siteImage = "/preview.jpg";
 

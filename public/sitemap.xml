@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://alexnault.dev</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-01-12T10:37:33.390Z</lastmod></url>
-<url><loc>https://alexnault.dev/about</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-01-12T10:37:33.390Z</lastmod></url>
-<url><loc>https://alexnault.dev/stack-queue-microtasks-macrotasks-and-the-event-loop-in-javascript</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-01-12T10:37:33.390Z</lastmod></url>
+<url><loc>https://tobynguyen.dev</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-04-12T08:25:04.425Z</lastmod></url>
+<url><loc>https://tobynguyen.dev/about</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-04-12T08:25:04.426Z</lastmod></url>
+<url><loc>https://tobynguyen.dev/escaping-react-context-hell-smarter-state-management-for-scalable-apps</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-04-12T08:25:04.426Z</lastmod></url>
+<url><loc>https://tobynguyen.dev/exploring-essential-data-structures-in-typescript-set-hashmap-linkedlist-and-tree</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-04-12T08:25:04.426Z</lastmod></url>
+<url><loc>https://tobynguyen.dev/hunting-down-and-fixing-a-sneaky-memory-leak-in-nodejs</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-04-12T08:25:04.426Z</lastmod></url>
+<url><loc>https://tobynguyen.dev/operational-transforms-algorithms-that-resolve-conflicts-in-real-time-docs</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-04-12T08:25:04.426Z</lastmod></url>
+<url><loc>https://tobynguyen.dev/stack-queue-microtasks-macrotasks-and-the-event-loop-in-javascript</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2025-04-12T08:25:04.426Z</lastmod></url>
 </urlset>

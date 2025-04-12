@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://alexnault.dev
+Host: https://tobynguyen.dev
 
 # Sitemaps
-Sitemap: https://alexnault.dev/sitemap.xml
+Sitemap: https://tobynguyen.dev/sitemap.xml

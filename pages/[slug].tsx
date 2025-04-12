@@ -24,6 +24,7 @@ import CustomMenu from "components/Menu";
 import LikeCounter from "components/LikeCounter";
 
 import tobyWebp from "public/toby.png";
+import { date } from "zod";
 
 const siteUrl = "https://tobynguyen.dev";
 
@@ -44,13 +45,13 @@ export default function SlugPage({
     description: excerpt,
     author: {
       "@type": "Person",
-      name: "Toby Nguyen",
+      name: "Ant Engineer",
       url: siteUrl,
     },
-    creator: ["Toby Nguyen"],
+    creator: ["Ant Engineer"],
     publisher: {
       "@type": "Person",
-      name: "Toby Nguyen",
+      name: "Ant Engineer",
       url: siteUrl,
     },
     image: `${siteUrl}${coverImage}`,
@@ -94,29 +95,31 @@ export default function SlugPage({
       />
       <Section
         component={
-          <Container className="max-w-[680px]">
+          <Container className="max-w-[820px]">
             <article>
               <header className="mt-24 mb-8">
+                <div className="relative mb-8 pt-[50%] h-36 md:h-44 lg:h-64">
+                  <Image
+                    src={coverImage}
+                    blurDataURL={blurDataURL}
+                    alt="Article cover"
+                    fill
+                    sizes="(max-width: 728px) 100vw, 728px"
+                    placeholder="blur"
+                    className="bg-gray-100 object-cover shadow-xl sm:rounded-md"
+                  />
+                </div>
                 <H className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl lg:mb-8">
                   {title}
                 </H>
-                <p className="text-lg font-bold text-gray-500">{excerpt}</p>
+                <p className="text-lg font-bold text-blue-600">{excerpt}</p>
               </header>
-              <div className="relative -mx-6 mb-8 pt-[66%]">
-                <Image
-                  src={coverImage}
-                  blurDataURL={blurDataURL}
-                  alt="Article cover"
-                  fill
-                  sizes="(max-width: 728px) 100vw, 728px"
-                  placeholder="blur"
-                  className="bg-gray-100 object-cover shadow-xl sm:rounded-md"
-                />
-              </div>
+
               <div ref={topRef} />
               <div
-                className={`fixed top-80 right-[calc((100vw-1000px)/2)] hidden lg:block ${!isTopInView && !isBottomInView ? "opacity-100" : "opacity-0"
-                  } transition-opacity duration-200`}
+                className={`fixed top-80 right-[calc((100vw-1000px)/2)] hidden lg:block ${
+                  !isTopInView && !isBottomInView ? "opacity-100" : "opacity-0"
+                } transition-opacity duration-200`}
               >
                 <LikeCounter slug={slug} />
               </div>
@@ -176,12 +179,12 @@ export default function SlugPage({
                   src={tobyWebp}
                   width={64}
                   height={64}
-                  alt="Toby Nguyen"
+                  alt="Ant Engineer"
                   className="mr-3 shrink-0 rounded-full bg-gray-100"
                   placeholder="blur"
                 />
                 <div>
-                  <div className="text-lg font-bold">By Toby Nguyen</div>
+                  <div className="text-lg font-bold">By Ant Engineer</div>
                   <div className="text-lg text-gray-500">
                     I write bite-sized articles for developers
                   </div>
@@ -220,14 +223,24 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   }
 
   const articleCards = (await articleRepo.getRelatedArticles(slug)).map(
-    ({ slug, title, coverImage, readingTime, blurDataURL, excerpt, tags }) => ({
+    ({
       slug,
       title,
       coverImage,
       readingTime,
       blurDataURL,
       excerpt,
-      tags
+      tags,
+      date,
+    }) => ({
+      slug,
+      title,
+      coverImage,
+      readingTime,
+      blurDataURL,
+      excerpt,
+      tags,
+      date,
     })
   );
 

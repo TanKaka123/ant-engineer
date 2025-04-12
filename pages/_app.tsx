@@ -27,10 +27,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <Head>
-        <title>Toby Nguyen</title>
+        <title>Ant Engineer</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-dracula.min.css"
         />
       </Head>
       <QueryClientProvider client={queryClient}>

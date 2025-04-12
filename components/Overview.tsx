@@ -34,7 +34,7 @@ export default function Overview() {
         <div className="relative h-40 w-40 sm:h-48 sm:w-48 lg:h-60 lg:w-60">
           <Image
             src={alexWebp}
-            alt="Toby Nguyen"
+            alt="Ant Engineer"
             fill
             sizes="(max-width: 640px) 160px, 240px"
             placeholder="blur"
@@ -44,7 +44,7 @@ export default function Overview() {
       </div>
       <div className="sm:ml-12 sm:flex-1 md:ml-16">
         <H className="mb-4 text-center text-3xl font-bold sm:text-left md:mb-8 md:text-4xl lg:text-5xl">
-          {"Hi, I'm Toby Nguyen and I solve problems using software."}
+          {"Hi, I'm Ant Engineer and I solve problems using software."}
         </H>
         <p className="mb-3 text-center text-lg text-gray-500 sm:text-left md:text-xl md:leading-relaxed">
           {

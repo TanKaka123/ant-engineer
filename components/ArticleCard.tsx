@@ -9,8 +9,25 @@ import LikeCounter from "components/LikeCounter";
 
 export type ArticleCardProps = Pick<
   Article,
-  "slug" | "title" | "coverImage" | "readingTime" | "blurDataURL" | "excerpt" | "tags"
+  | "slug"
+  | "title"
+  | "coverImage"
+  | "readingTime"
+  | "blurDataURL"
+  | "excerpt"
+  | "tags"
+  | "date"
 >;
+
+const formatDate = (dateString) => {
+  console.log({dateString})
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "2-digit",
+    year: "numeric",
+  }).format(date);
+};
 
 export default function ArticleCard({
   slug,
@@ -19,34 +36,31 @@ export default function ArticleCard({
   readingTime,
   blurDataURL,
   excerpt,
-  tags
+  tags,
+  date,
 }: ArticleCardProps) {
   return (
-    <Link
-      href={`/${slug}`}
-      passHref
-      className="overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-gray-200 transition hover:shadow-2xl dark:bg-gray-100 dark:hover:ring-green-400"
-    >
-      <div className="relative w-full pt-[50%]">
+    <Link href={`/${slug}`} passHref className="overflow-hidden  bg-white ">
+      <div className="relative w-full pt-[50%] h-36 md:h-44 lg:h-64">
         <Image
           src={coverImage}
           blurDataURL={blurDataURL}
           alt="Cover image"
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 416px"
+          sizes="(max-width: 660px) 100vw, (max-width: 788px) 50vw, 436px"
           placeholder="blur"
-          className="bg-gray-100 object-cover"
+          className="rounded-2xl bg-gray-100 object-cover"
         />
       </div>
-      <div className="px-4 py-6 sm:px-6">
+      <div className="py-6">
         <Section
           component={
             <H className="mb-3 text-xl font-bold md:text-2xl">{title}</H>
           }
         >
-          <p className="text-sm text-gray-600 md:text-base">{excerpt}</p>
+          {/* <p className="text-sm text-gray-600 md:text-base">{excerpt}</p> */}
           <div className="mt-4 flex items-center space-x-4">
-            <div className="text-sm text-gray-500">{readingTime} min read</div>
+            <div className="text-md text-black">{date && formatDate(date)}</div>
             <LikeCounter
               slug={slug}
               classNameText="text-sm"
@@ -55,10 +69,11 @@ export default function ArticleCard({
               }}
             />
           </div>
-          <div className="flex flex-wrap gap-2 mt-4">
+          <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag, index) => (
-              <p key={index}
-                className="px-3 py-1 text-sm font-medium text-gray-500 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-white"
+              <p
+                key={index}
+                className="rounded-full bg-gray-300 px-3 py-1 text-sm font-medium text-white"
               >
                 {tag}
               </p>
