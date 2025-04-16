@@ -60,7 +60,7 @@ export default function AboutPage() {
               {`Hey!`} <br />
               {`I'm Nguyen Hong Tan`}
               <br />
-              {`I'm a passionate software engineer from Vietnam, currently working at both Presight and KVY Technology. In addition to coding, I love sharing knowledge through writing articles for fellow developers.`}
+              {`I'm a passionate software engineer from Vietnam, currently working at Presight. In addition to coding, I love sharing knowledge through writing articles for fellow developers.`}
             </p>
             <p>
               {`I earned my degree in Software Engineering from the University of Science. Since then, I’ve had the privilege of working with technology-driven companies, transforming my passion for building innovative solutions into a fulfilling career.`}
